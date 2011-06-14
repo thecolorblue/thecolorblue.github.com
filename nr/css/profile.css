@@ -1,0 +1,56 @@
+
+                    /* Profiles */
+/* ------------------------------------------------- */
+
+
+/* DJs */
+.dj .profile {
+float:left;
+width:550px;
+height:300px;
+position:relative;
+border-radius:5px;
+margin:0 10px 10px 0;
+border:2px white solid;}
+.dj .profile a img.clubimg {
+width:220px;
+height:150px;
+border-radius:5px;}
+.dj .profile a {
+opacity:.5;
+border-radius:5px;
+}
+.dj .profile a:hover {
+opacity:1;
+}
+
+.dj .profile p.title {
+position:absolute;
+top:10px;
+left:20px;
+color:white;
+font-size:1.5em;
+}
+
+.dj .profile img.dj {
+position:relative;
+float:right;
+width:125px;
+height:115px;
+background-color:white;
+}
+.dj .profile p.desc {
+float:right;
+margin:12px 3px 3px 3px;
+overflow:hidden;
+font-size:1em;
+color:white;
+text-align:center;
+}
+
+
+
+
+/* Clubs */
+
+/* Users */

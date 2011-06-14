@@ -1,0 +1,752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Acme Dashboard</title>
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="../../css/ie6.css" media="screen" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="../../css/ie.css" media="screen" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/960.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/form-structure.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/form-style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/jquicustom.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/profile.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/range.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+<style>
+#datepicker {
+position:relative;
+z-index:100;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/facebox.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.8.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.tipsy.js"></script>
+<script>
+jQuery(document).ready(function($) {
+  $('a[rel*=facebox]').facebox({
+    closeImage   : 'css/img/closelabel.png'
+    })               
+$('label.inlined + input.input-text').live( 'blur', function(){
+    if($(this).val() == ''){
+      $(this).prev('label.inlined').removeClass('has-text');    
+    }     
+  }
+);
+});
+</script>
+<script language="javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/flowplayer-3.2.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+
+<script>
+    $(function() {
+		var availableTags = [
+			"DJ Mixes A Lot",
+			"DJ Crazy",
+			"DJ Pokadots",
+			"DJ CrazyHorse",
+			"DJ Speakeasy",
+			"DJ JD",
+			"DJ John",
+			"DJ Country"
+        ];
+		function split( val ) {
+			return val.split( /,\s*/ );
+		}
+		function extractLast( term ) {
+			return split( term ).pop();
+		}
+
+		$( "#theDJ" )
+			// don't navigate away from the field on tab when selecting an item
+			.bind( "keydown", function( event ) {
+				if ( event.keyCode === $.ui.keyCode.TAB &&
+						$( this ).data( "autocomplete" ).menu.active ) {
+					event.preventDefault();
+				}
+			})
+			.autocomplete({
+				minLength: 0,
+				source: function( request, response ) {
+					// delegate back to autocomplete, but extract the last term
+					response( $.ui.autocomplete.filter(
+						availableTags, extractLast( request.term ) ) );
+				},
+				focus: function() {
+					// prevent value inserted on focus
+					return false;
+				},
+				select: function( event, ui ) {
+					var terms = split( this.value );
+					// remove the current input
+					terms.pop();
+					// add the selected item
+					terms.push( ui.item.value );
+					// add placeholder to get the comma-and-space at the end
+					terms.push( "" );
+					this.value = terms.join( ", " );
+					return false;
+				}
+			});
+	});
+</script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.timepicker.js"></script>
+<script>
+jQuery.validator.setDefaults({debug:true});
+
+$(document).ready(function() {
+$("label.error").hide();
+$(".pref").validate({
+    wrapper: "li",
+    rules: {
+        street1: {
+        required: true,
+        minlength: 3 },
+        city: {required: "#street:filled"},
+        state: {required: "#street:filled"}, 
+        zip: {required:"#street:filled"}
+    },
+    messages: {
+        street1: {required:"This is required",
+            minlength:"Please put full address"},
+        city: "this is required",
+        state: "this is required",
+        zip: "this is required"}
+});
+$(".create").validate({
+    wrapper: "li",
+    rules: {
+        street1: {
+        required: true,
+        minlength: 3 },
+        city: {required: "#street:filled"},
+        state: {required: "#street:filled"}, 
+        zip: {required:"#street:filled"}
+    },
+    messages: {
+        street1: {required:"This is required",
+            minlength:"Please put full address"},
+        city: "this is required",
+        state: "this is required",
+        zip: "this is required"}
+});
+});
+</script>
+<script>
+(function($) {
+// adds tooltips to form when input is in focus
+    $.fn.formtt = function(){
+		$(":input", this).each(function(){
+		  var base_title = $(this).attr('title');
+		  if(undefined!=base_title && ''!= base_title){
+		    var title = base_title.replace(/\|/g, "<br />");
+		    var new_elem = $(this).attr('name')+'tip';
+		    $(this).focus(function(){
+		     $(this).attr('title', '');
+              $(this).after('<span class="tt" id="'+new_elem+'">'+title+'<\/span>');
+		      $('#'+new_elem).show();
+		    }).blur(function() { 
+		      $('#'+new_elem).remove();
+		      $(this).attr('title', base_title);
+		    });
+		  }     
+		});
+	}
+	
+})(jQuery);
+/**
+ *  NightClub Datepicker
+ *    takes a list of dates and adds a highlight class
+ *    to that day.
+ *
+ */
+// highlights dates in datepicker
+$().ready(function(){ 
+var dates = ['05/26/11', '05/08/2011', '05/14/2011', '05/20/2011'];
+    $('#datepicker').datepicker({
+        dateFormat: 'dd/mm/yy',
+        beforeShowDay: function(date) {
+          for (var i = 0; i < dates.length; i++) {
+              if (new Date(dates[i]).toString() == date.toString()) {             
+                   return [true, 'highlight', date];
+              }
+          }
+          return [true];
+       }   
+    });
+    
+    
+    
+$('#comm_form').formtt(); 
+$(":range").rangeinput();
+$('#time').timepicker();
+
+/**
+ *  Dims input labels when focused
+ *  Hides label when something is typed
+ *  For time, the label is hidden right away
+ *  because of the way js fills in the input
+ */
+    $("#time").focus(function(){
+        $(this).prev("label.inlined").addClass("has-text");
+    });
+    $("label.inlined + input.input-text").each(function (type){
+//        Event.observe(window, 'load', function(){
+//            setTimeout(function(){
+//                if (!input.value.empty()){
+//                    input.previous().addClassName('has-text');
+//                }
+//            }, 200);
+//        });
+        $(this).focus(function(){
+            $(this).prev("label.inlined").addClass("focus");
+            if($(".time")){
+                $(this).addClass("has-text").removeClass("focus");
+            }
+        });
+        $(this).keypress(function() {
+            $(this).prev("label.inlined").addClass("has-text").removeClass("focus");
+        });
+        $(this).blur(function(){
+            if($(this).val() == "" && !$("#time")){
+                $(this).prev("label.inlined").removeClass("has-text").removeClass("focus");
+            }
+        });
+    });
+});
+</script>
+</head>
+<body>
+	<div class="container_12">
+<div style="height:3px"></div>
+<div class="grid_12" style="border-style:ridge; border-width:medium;" id="header">
+    <div class="moon">
+     	<h1 id="branding">
+      		<a href="#"></a>
+        </h1>
+	</div>
+	<!--guy removed stuff from here-->
+               <!-- About, info, and logout are on the right because of the secondary class --> 
+            <ul class="nav">
+    			<li id="acmetv">
+					<a href="#">
+                        <img 
+                            src="css/glyphs/tv.png" 
+                            class="glyph large"
+                            />
+                        Acme.tv
+                    </a>
+				</li>
+				<li class="secondary">
+					<a href="#">About Acme</a>
+				</li>
+				<li class="secondary">
+					<a href="#">Information</a>
+				</li>
+            </ul>    
+    </div>			
+	<div class="grid_2">
+        <div class="box leftbar">
+            <div class="block">
+                <ul class="menu">
+                <li>
+                    <a href="cl-front.php">
+                        <label>Home Page</label>
+                        <img style="float:right;" 
+                            src="css/glyphs/home.png" 
+                            class="glyph large"/>
+                    </a>
+                </li>
+                    <li>
+                        <a href="cl-pref.php" id="pref" 
+                        title="Change Your Preferences" target="iframe">
+                            <span>Preferences</span>
+                            <img src="css/glyphs/pref.png" 
+                                class="glyph medium" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Profile</span>
+                            <img src="css/glyphs/user.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="eventslink"
+                        title="View Events">
+                            <span>Events</span>
+                            <img src="css/glyphs/martini.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="createeventlink"
+                        title="Create Event">
+                            <span>Create Event</span>
+                            <img src="css/glyphs/martini.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="upgrade"
+                        title="Upgrade for more Features">
+                            <span>Upgrade</span>
+                            <img src="css/glyphs/payments.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li class="disabled">
+                            <span>Charts (disabled)</span>
+                            <img src="css/glyphs/line-chart.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        
+                    </li>
+                    <li>
+                        <label class="inlined">Search</label>
+                        <input type="text" class="input-text"/>
+    					<img src="magnify.png" id="searchicon"/>
+                    </li>
+                    <li>
+                        <a href="#">Logout</a>
+                    </li>
+                    <!-- DJ Menu 
+                    <li>
+                        <a href="dj-front.php" id="home" 
+                        title="home sweet home">
+                            <span>Home</span>
+                            <img src="css/glyphs/home.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dj-pref.php" id="pref" 
+                        title="Change Your Preferences">
+                            <span>Preferences</span>
+                            <img src="css/glyphs/pref.png" 
+                                class="glyph medium" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dj-pictures.php" id="pics"
+                        title="View Pictures">
+                            <span>Pics</span>
+                            <img src="css/glyphs/photos.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    <li>
+                        <a href="dj-payments.php" id="upgrade"
+                        title="Upgrade for more Features">
+                            <span>Upgrade</span>
+                            <img src="css/glyphs/payments.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li class="disabled">
+                            <span>Charts (disabled)</span>
+                            <img src="css/glyphs/line-chart.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        
+                    </li>
+                    -->
+                    <!-- NightClub Menu 
+                                        <li>
+                        <a href="nc-front.php" id="home" 
+                        title="home sweet home">
+                            <span>Home</span>
+                            <img src="css/glyphs/home.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nc-pref.php" id="pref" 
+                        title="Change Your Preferences">
+                            <span>Preferences</span>
+                            <img src="css/glyphs/pref.png" 
+                                class="glyph medium" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nc-pictures.php" id="pics"
+                        title="View Pictures">
+                            <span>Pics</span>
+                            <img src="css/glyphs/photos.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    <li>
+                        <a href="nc-payments.php" id="upgrade"
+                        title="Upgrade for more Features">
+                            <span>Upgrade</span>
+                            <img src="css/glyphs/payments.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        </a>
+                    </li>
+
+                    <li class="disabled">
+                            <span>Charts (disabled)</span>
+                            <img src="css/glyphs/line-chart.png" 
+                                class="glyph large" 
+                                style="float:right;"/>
+                        
+                    </li>
+                    -->
+            </div>
+        </div>
+    </div>
+    <div class="grid_7">
+    <div class="box cevent">
+        <div class="block">
+            <form action="models/create-event.php" method="post" name="comm_form" id="comm_form">
+              <h2><img src="css/glyphs/martini.png" class="glyph large"/>Create an Event</h2>
+                <fieldset>
+                    <div class="field">
+                        <label for="theName" class="inlined">Event Name</label>
+                            <input name="form_name" type="text" id="theName" 
+                            class="frm_txt input-text" title="Make sure this is unique. 
+                            adding more content here to see how big it can get."/>
+                        
+                        <p class="field_desc">The name of your event</p>
+                    </div>            
+
+                    <div class="field">
+                        <label for="form_specials1" class="inlined">Specials</label>
+                            <input name="form_specials1" type="text" id="special1" 
+                                class="frm_txt input-text"/>
+                    </div>
+                    <div class="field">
+                        <label for="fee" class="inlined">Entry Fees</label>
+                          <input name="form_fee" type="text" id="fee"
+                            class="frm_txt input-text"/>
+                    </div>
+                    <div class="field">
+                        <label for="theDJ" class="inlined">DJ's</label> 
+                            <input name="form_url" type="text" id="theDJ" 
+                            class="frm_txt input-text" title="DJ's will drop down when you start typing"/>
+                    </div>
+                    <div class="field">
+                        <label for="band" class="inlined">Band</label>
+                          <input name="form_time" type="text" id="band"
+                            class="frm_txt input-text"/>
+                        <label for="bandurl" class="inlined">Band URL</label>
+                          <input name="form_time" type="text" id="bandurl"
+                            class="frm_txt input-text" title="Band URL description"/>
+                        </label>             
+                    </div>
+                    <div class="field">
+                        <label for="event_desc">Event Description:<br />
+                            <textarea name="m" cols="30" rows="6" 
+                            id="event_desc" title="description">a nice large box</textarea></label>
+                        <br />
+                    </div>
+                    <div class="grid-6-12">
+                        <label for="photo">
+                            <img src="css/glyphs/photos.png" class="glyph large"/>
+                            Upload Flyer
+                        </label>
+                        <input type="file" class="form-txt upload" value="Event Image" id="photo"/>
+                    </div>
+                    <div style="top:40px;right:25px;position:absolute;">
+                        <div id="datepicker">
+                            <label for="datepicker">Pick a date:</label>
+                        </div>                        
+                        <label for="time" class="inlined time">Time</label>
+                        <input name="form_time" type="text" id="time"
+                            class="frm_txt_sml input-text"/>
+                    </div>
+                                         
+                    <hr/>
+                        <h2 style="text-align:center"><img src="css/glyphs/note.png" class="glyph large"/>Music</h2>
+                    <div class="grid-4-12" style="text-align:left;">                        
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range1" />Top 40
+                        </label>
+                        
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range2"  />Pop
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range3"  />Dance
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range4" />House
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range2" />Electro
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range3" />Hip-Hop / Rap
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range4" />Reggae
+                        </label>
+
+                    </div>     
+                    <div class="grid-4-12" style="text-align:left;">
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range1" />Reggaeton
+                        </label>
+                        
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range2"  />R&B
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range3"  />Old-School
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range4" />Country
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range2" />Motown
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range3" />Alternative
+                        </label>
+                    </div>
+                    <div class="grid-4-12" style="text-align:left;">
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range1" />Clasic Rock
+                        </label>
+                        
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range2"  />Acoustic
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range3"  />Rock
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range4" />Metal
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range2" />70's
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range3" />80's
+                        </label>
+                        <label class="form-lbl">
+                            <input type="checkbox" name="range4" />90's
+                        </label>
+                    </div>
+                    <button class="buttons" type="submit">Send</button>
+                </fieldset>
+            </form>
+            <hr/>
+        </div>
+        <div class="box">
+            <h2><img src="css/glyphs/user.png" class="glyph large"/>View Profile</h2>
+            <div class="user page"style="padding:5px;margin:20px;">
+                <div style="position:relative;">
+                    <img 
+                                style="float:left;margin:10px;height:80px;width:80px;"
+                                src="css/img/dj.jpg"/> 
+                    <p style="margin:16px;margin-top:12px;font-weight:bold;">{{ Club_Name }}</p>
+                    <p style="margin:16px;">{{ Club_Address_Line_1 }}</p>
+                    <p style="margin:3px;">{{ Club_Atmosphere }}</p>
+                    <p style="margin:3px;">{{ Club_Cryogenics }}</p>
+                    <p style="margin:3px;">{{ Club_Smoking_Allowed }}</p>
+                    <p style="margin:3px;">{{ Club_Serves_Food }}</p>
+                    <p style="margin:3px;">{{ Club_Number_Of_Bars }}</p>
+                    <p style="margin:3px;">{{ Club_Minimum_Age }}</p>
+                    <p style="margin:3px;">{{ Club_Sexual_Preference }}</p>
+                    <p style="margin:3px;">{{ Club_Contact_Email }}</p>
+                    <p style="margin:3px;">{{ Club_Contact }}</p>
+                    <div style="position:absolute;top:5px;right:10px;">
+                        <p style="margin:3px;margin-top:12px;width:305px;height:100px;overflow:auto;text-align:right;">
+                            {{ Club_Bio }}
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                <div style="width:45%;
+                    border: 4px solid;
+                    border-color:#ccc;
+                    margin:5px;
+                    float:left;">
+                    <p style="margin:10px;text-align:center;font-weight:bold;">
+                        Recent DJ's<br/>
+                        {{ Event_DJs }}
+                    </p>
+                </div>
+                <div style="width:45%;
+                        border: 4px solid;
+                        border-color:#ccc;
+                        margin:5px;
+                        float:left;">
+                    <p style="margin:10px;text-align:center;font-weight:bold;">
+                        Recent Events<br/>
+                        {{ Event_Club_Event }}
+                    </p>
+                </div>
+                <p style="margin:10px;text-align:center;">Comments - Likes - Share buttons</p>
+                <hr/>
+                <div style="width:30%;
+                        border: 4px solid;
+                        border-color:#ccc;
+                        margin:5px;
+                        float:left;">
+                    <p style="margin:10px;text-align:center;font-weight:bold;">
+                        Biggest Fans<br/>
+                        Fans sorted by points
+                    </p>
+                </div>
+                <div style="width:30%;
+                        border: 4px solid;
+                        border-color:#ccc;
+                        margin:5px;
+                        float:left;">
+                    <p style="margin:10px;text-align:center;font-weight:bold;">
+                        put something here
+                    </p>
+                </div>
+                <div style="width:30%;
+                        border: 4px solid;
+                        border-color:#ccc;
+                        margin:5px;
+                        float:left;">
+                    <p style="margin:10px;text-align:center;font-weight:bold;">
+                        something else here
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+	<div class="grid_3">
+        <!-- Right Sidebar -->
+<script type="text/javascript">
+      var queryString = '';
+      var dataUrl = '';
+
+      function onLoadCallback() {
+        if (dataUrl.length > 0) {
+          var query = new google.visualization.Query(dataUrl);
+          query.setQuery(queryString);
+          query.send(handleQueryResponse);
+        } else {
+          var dataTable = new google.visualization.DataTable();
+          dataTable.addRows(7);
+
+          dataTable.addColumn('number');
+          dataTable.addColumn('number');
+          dataTable.setValue(0, 0, 10);
+          dataTable.setValue(0, 1, 50);
+          dataTable.setValue(1, 0, 50);
+          dataTable.setValue(1, 1, 60);
+          dataTable.setValue(2, 0, 60);
+          dataTable.setValue(2, 1, 100);
+          dataTable.setValue(3, 0, 80);
+          dataTable.setValue(3, 1, 40);
+          dataTable.setValue(4, 0, 40);
+          dataTable.setValue(4, 1, 20);
+          dataTable.setValue(5, 0, 60);
+          dataTable.setValue(5, 1, 40);
+          dataTable.setValue(6, 0, 30);
+          dataTable.setValue(6, 1, 30);
+
+          draw(dataTable);
+        }
+      }
+
+      function draw(dataTable) {
+        var vis = new google.visualization.ImageChart(document.getElementById('chart'));
+        var options = {
+          chxl: '',
+          chxp: '',
+          chxr: '',
+          chxs: '',
+          chxtc: '',
+          chxt: 'y',
+          chbh: 'a',
+          chs: '245x225',
+          cht: 'bvg',
+          chco: '10006E,73C9DE',
+          chd: 't:10,50,60,80,40,60,30|50,60,100,40,20,40,30',
+          chdl: '|',
+          chtt: 'Fans Chart'
+        };
+        vis.draw(dataTable, options);
+      }
+
+      function handleQueryResponse(response) {
+        if (response.isError()) {
+          alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+          return;
+        }
+        draw(response.getDataTable());
+      }
+
+      google.load("visualization", "1", {packages:["imagechart"]});
+      google.setOnLoadCallback(onLoadCallback);
+
+    </script>
+        <div class="box charts" id="toprightbar">
+            <h2><img src="css/glyphs/bar-chart.png" class="glyph large"/>Charts<img src="css/glyphs/line-chart.png" class="glyph large"/></h2>
+
+
+            <p>Percent of Captured Market</p>
+            <img src="http://chart.apis.google.com/chart?chs=200x100&cht=gm&chco=000000,B22B2B|BFFABF&chd=s:p" width="245" height="125" alt="" />
+            <p>Percent of Square feet per body</p>
+            <img src="http://chart.apis.google.com/chart?chs=300x225&cht=p&chco=ECAC9D|B22B2B|2E8C2E|BFFABF&chd=s:Uf9a&chdl=30%C2%B0|40%C2%B0|50%C2%B0|60%C2%B0" width="245" height="185" alt="" />    
+            <p>Population Density by percent of club attendance</p>
+            <img src="http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=245x220&cht=s&chco=B22B2B&chd=s:WNHD_____AELRYglnnjh,ROOSXYaYcddhnnnqplkm&chg=14.3,-1,1,1&chm=B,C5D4B5BB,0,0,0" width="245" height="220" alt="" />
+            <p>Comparison to Competitors</p>
+            <img src="http://chart.apis.google.com/chart?chs=300x225&cht=v&chco=ECAC9D,B22B2B,2E8C2E&chd=t:100,80,60,30,30,30,10&chdl=A|B|C" width="245" height="225" alt="" />
+
+
+            <p>Competitors Frequency</p>
+            <div class="block" id="chart"></div>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+    <hr/>
+    <div class="clear"></div>
+    <div class="grid_12" id="footer">
+      <div class="box">
+	  	  <p>We are the music makers. We are the creators of dreams.</p>
+               <!-- About, info, and logout are on the right because of the secondary class --> 
+            <ul class="nav">
+    			<li id="acmetv">
+					<a href="#">
+                        <img 
+                            src="css/glyphs/tv.png" 
+                            class="glyph large"
+                            />
+                        Acme.tv
+                    </a>
+				</li>
+				<li class="secondary">
+					<a href="#">About Acme</a>
+				</li>
+				<li class="secondary">
+					<a href="#">Information</a>
+				</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

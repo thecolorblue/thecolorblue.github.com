@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Night Life Island: Dark, Fixed (Create New DJ)</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/960.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/range.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/form-structure.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/form-style.css" media="screen" />		
+<link rel="stylesheet" type="text/css" href="css/jquicustom.css" media="screen" />
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="../../css/ie6.css" media="screen" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="../../css/ie.css" media="screen" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="css/facebox.css" media="screen" />
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/facebox.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.7.custom.min.js"></script>
+</head>
+<body>
+<div class="container_12">
+	<div class="grid_12" id="header">
+		<h1 id="branding">
+			<a href="#">Night Life Island: Dark, Fixed (Login DJ)</a>
+		</h1>
+    </div			
+	<div class="grid_2">
+		<div class="box">
+			<div class="block">
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="#" class="bubble"><span class="hidden">Exit</span></a></li>
+                </ul>
+			</div>
+		</div>
+
+    </div>
+    <div class="grid_10">
+    	<div class="box" id="message">
+            <div class="block">
+                <p>This is where messages for the user would go. 
+                Extra style will be put into this later to make it stick out more.</p>
+            </div>
+        </div>
+        <div class="grid_8">
+            <form id="myForm" action="create-dj.php" method="post">
+            <div class="box">
+                <legend><h2>Create Your Account</h2></legend>
+                <div class="grid-4-12">
+                    <label class="form-lbl">Username</label>
+                    <input type="text" class="form-txt form-medium" />
+                </div>
+                <div class="grid-4-12">
+                    <label class="form-lbl">Password</label>
+                    <input type="password" class="form-txt"/>
+                </div>
+                <div class="grid-4-12">
+                    <label class="form-lbl">Email</label>
+                    <input type="text" class="form-txt"/>
+                </div>
+                <hr/>
+                <div class="grid-6-12">
+                    <label class="form-lbl">Sex:</label>
+                    <ul class="form-list-rdo">
+                        <li>
+                            <input name="sex" type="radio" value="male"/>
+                            <label class="form-lbl">Male</label>
+                        </li>
+                        <li>
+                            <input name="sex" type="radio" value="female"/>
+                            <label class="form-lbl">Female</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-6-12">
+                    <label class="form-lbl">Upload Image</label>
+                    <input type="file" class="form-txt" value="Default User Image"/>
+                </div>
+                <div class="grid-12-12">
+                    <label class="form-lbl">Your Website</label>
+                    <input type="text" class="form-txt form-medium"/>
+                </div>
+                <hr/>
+                <div class="grid-12-12">
+                    <label class="form-lbl">Extras</label>
+                    <ul class="form-list-chk">
+                        <li><input name="extras" type="checkbox" /><label class="form-lbl">Video Wall</label></li>
+                        <li><input name="extras" type="checkbox" /><label class="form-lbl">Special 1</label></li>
+                        <li><input name="extras" type="checkbox" /><label class="form-lbl">Special 2</label></li>
+                        <li><input name="extras" type="checkbox" /><label class="form-lbl">Special 3</label></li>
+                        <li><input name="extras" type="checkbox" /><label class="form-lbl">Special 4</label></li>
+                    </ul>
+                </div>
+                    <hr/>
+                    <div class="grid-4-12">
+                        <h2>Music</h2>
+                        <label class="sdr-lbl">Range 1</label>
+                        <input type="range" name="range1" min="0" max="100" step="1" value="100" progress="false"/><br/>
+                        <label class="sdr-lbl">Range 2</label>
+                        <input type="range" name="range2" min="0" max="100" step="1" value="100" /><br/>
+                        <label class="sdr-lbl">Range 3</label>
+                        <input type="range" name="range3" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 4</label>
+                        <input type="range" name="range4" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 5</label>
+                        <input type="range" name="range2" min="0" max="100" step="1" value="100" /><br/>
+                        <label class="sdr-lbl">Range 6</label>
+                        <input type="range" name="range3" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 7</label>
+                        <input type="range" name="range4" min="0" max="100" step="1" value="50" /><br/>
+                        <hr/>
+                    </div>
+                    <div class="grid-4-12">
+                        <h2>&nbsp</h2>
+                        <label class="sdr-lbl">Range 1</label>
+                        <input type="range" name="range1" min="0" max="100" step="1" value="100" progress="false"/><br/>
+                        <label class="sdr-lbl">Range 2</label>
+                        <input type="range" name="range2" min="0" max="100" step="1" value="100" /><br/>
+                        <label class="sdr-lbl">Range 3</label>
+                        <input type="range" name="range3" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 4</label>
+                        <input type="range" name="range4" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 5</label>
+                        <input type="range" name="range2" min="0" max="100" step="1" value="100" /><br/>
+                        <label class="sdr-lbl">Range 6</label>
+                        <input type="range" name="range3" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 7</label>
+                        <input type="range" name="range4" min="0" max="100" step="1" value="50" /><br/>
+                        <hr/>
+                    </div>
+                    <div class="grid-4-12">
+                        <h2>&nbsp</h2>
+                        <label class="sdr-lbl">Range 1</label>
+                        <input type="range" name="range1" min="0" max="100" step="1" value="100" progress="false"/><br/>
+                        <label class="sdr-lbl">Range 2</label>
+                        <input type="range" name="range2" min="0" max="100" step="1" value="100" /><br/>
+                        <label class="sdr-lbl">Range 3</label>
+                        <input type="range" name="range3" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 4</label>
+                        <input type="range" name="range4" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 5</label>
+                        <input type="range" name="range2" min="0" max="100" step="1" value="100" /><br/>
+                        <label class="sdr-lbl">Range 6</label>
+                        <input type="range" name="range3" min="0" max="100" step="1" value="50" /><br/>
+                        <label class="sdr-lbl">Range 7</label>
+                        <input type="range" name="range4" min="0" max="100" step="1" value="50" /><br/>
+                    </div>     
+                    <div class="grid-12-12">
+                        <label class="form-lbl">Bio</label>
+                        <textarea rows="" cols="" class="form-txt"></textarea>
+                    </div>
+                </form>
+                <script>
+                    $(":range").rangeinput();
+                </script>
+                <div class="grid-4-12 form-no-lbl">
+                    <input class="" type="submit" title="send" value="send" />
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </div>
+    <div class="clear"></div>
+    <hr/>
+    <div class="clear"></div>
+    <div class="container_12">
+        <div class="grid_12" id="footer">
+            <div class="box">
+                <p>We are the music makers. We are the creators of dreams.</p>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+</div>
+</body>
+</html>

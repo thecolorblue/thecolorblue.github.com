@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Night Life Island: Dark, Fixed</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/960.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/range.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/jquicustom.css" media="screen" />
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="../../css/ie6.css" media="screen" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="../../css/ie.css" media="screen" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="css/facebox.css" media="screen" />
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/facebox.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.7.custom.min.js"></script>
+<!-- Just for admin pages -->
+<script language="javascript" src="http://www.google.com/jsapi"></script>
+<script>
+jQuery(document).ready(function($) {
+  $('a[rel*=facebox]').facebox({
+    closeImage   : 'css/img/closelabel.png'
+    })
+  $('#datepicker').datepicker({
+        inline:true
+    });
+});
+
+</script>
+</head>
+<body>
+<div class="container_12">
+	<div class="grid_12" style="position:relative;">
+              <!-- This box here could use a picture in the background,
+              but we are to early for thinking about specific images.-->
+		<h1 id="branding">
+			<img src="css/img/logo.png" style="height:50px;width:50px;position:relative;top:10px;left:10px;"/>
+            <a href="#">Night Life Island: Dark, Fixed</a>
+		</h1>
+        <div class="box" id="message" style="width:400px;position:absolute;top:10px;right:0;">
+            <div class="block">
+                <!-- This is where I thought we would have messages for the user
+                that we definitly want them to pay attention to. For example,
+                if they have not completed their profile, we would 'remind' them
+                here. A messaging system would be hand for Clubs and DJ's too, to
+                remind Clubs that a bill is due, or DJ's that they need to upload an
+                profile picture, or something like that. Basically, the messages
+                will be whatever database nodes are empty that we want to be filled.-->
+                <p>This is where messages for the user would go. Extra style will be put into this later to make it stick out more.</p>
+            </div>
+        </div>
+        <div>
+               <!-- Some of these are repetitive, and will disapear
+               when we develop the site more. --> 
+            <ul class="nav">
+                <li class="secondary">
+                    <a href="#">Logout</a>
+                </li>
+                <li class="secondary">
+                    <a href="#">Preferences</a>
+                </li>
+                <li class="secondary">
+                    <a href="#" title="link to facebook app">Facebook</a>
+                </li>
+                <li class="secondary">
+                    <a href="#">Home</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+			
+	<div class="grid_2">
+		<div class="box">
+			<h2>User Info</h2>
+			<div class="block">
+                <a href="#" class="image">
+                    <!-- This was not in your database scheme but 
+                    I thought we should have it. 
+                    Maybe we can pull this from facebook 
+                    and cache it somewhere.-->
+                    <!-- {{ Clubber.Image }} -->
+                    <img class="profile" src="css/img/photo_60x60.jpg" width="80" height="110" alt="photo" />
+                </a>
+
+                <ul class="menu">
+                    <li>
+                        <a href="#">Photos</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Search</a>
+                    </li>
+                    <li>
+                        <!-- I don't know how we are going to do this ranking
+                        part or the point system but we will need to store these
+                        in the database somehow. -->
+                        <p>Rank</p>
+                    </li>
+                    <li>
+                        <!-- {{ Clubber_Points }} -->
+                        <p>400 Points</p>
+                    </li>
+                </ul>
+                <!-- These are inspired by a user on forrst.com. 
+                We need to change the colors and integrate them with the 
+                rest of the navigation on the site. The letters will be
+                replaced with icons. -->
+                <a href="#" class="bubble"><span class="pictos">H</span> <span class="hidden">Home sweet home</span></a>
+                <a href="#" class="bubble"><span class="pictos">NC</span> <span class="hidden">Night Clubs</span></a>
+                <a href="#" class="bubble"><span class="pictos">DJ</span> <span class="hidden">DJ</span></a>
+                <a href="#" class="bubble"><span class="pictos">Edit</span> <span class="hidden">Edit preferences</span></a>
+            </div>
+        </div>
+		<div class="box" id="lowernav">
+			<div class="block">
+                <!-- I thought this would be AJAX navigation
+                to update the main content area with different 
+                information, but I am rethinking this. It is mostly
+                legacy now. -->
+                <ul class="menu">
+                    <li>
+                        <a href="#">Messages</a>
+                    </li>
+                    <li>
+                        <a href="#">Calendar</a>
+                    </li>
+                    <li>
+                        <a href="#">Friends</a>
+                    </li>
+                </ul>
+                <p>AJAX that update the main content area.</p>
+            </div>
+		</div>
+
+    </div>
+    <div class="grid_7">
+		<div class="box">
+			<div class="block">
+                <!-- I originally thought this page would be where users would spend 90%
+                of their time. We would update the main content area with whatever
+                content their were looking for through AJAX. -->
+                <hr/>
+                <div class="block">
+                    <div class="event featured">
+                        <a href="club.html" rel="facebox">
+                            <img class="clubimg" src="css/img/club.jpg"/>
+                        </a>
+                        
+                        <p class="title"></p>
+                        <a href="dj.html" rel="facebox">
+                            <img class ="dj" src="css/img/dj.jpg"/>
+                        </a>
+                        <p class="desc">{{ Event_Name }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}
+                    </div>
+                </div>
+                <hr/>
+                <div class="block">
+                    <div class="event">
+                        <a href="club.html" rel="facebox">
+                            <img class="clubimg" src="css/img/club.jpg"/>
+                        </a>
+                        
+                        <p class="title"></p>
+                        <a href="dj.html" rel="facebox">
+                            <img class ="dj" src="css/img/dj.jpg"/>
+                        </a>
+                        <p class="desc">{{ Event_Name }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}
+                    </div>
+                </div>
+                <hr/>
+                <div class="block">
+                    <div class="event">
+                        <a href="club.html" rel="facebox">
+                            <img class="clubimg" src="css/img/club.jpg"/>
+                        </a>
+                        
+                        <p class="title"></p>
+                        <a href="dj.html" rel="facebox">
+                            <img class ="dj" src="css/img/dj.jpg"/>
+                        </a>
+                        <p class="desc">{{ Event_Name }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}
+                    </div>
+                </div>
+                <hr/>
+                <div class="block">
+                    <div class="event">
+                        <a href="club.html" rel="facebox">
+                            <img class="clubimg" src="css/img/club.jpg"/>
+                        </a>
+                        
+                        <p class="title"></p>
+                        <a href="dj.html" rel="facebox">
+                            <img class ="dj" src="css/img/dj.jpg"/>
+                        </a>
+                        <p class="desc">{{ Event_Name }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}<br/>
+                        {{ Event_Description }}
+                    </div>
+                </div>
+                <hr/>
+                <!-- End of Main content-->
+            </div>
+		</div>
+	</div>
+	<div class="grid_3">
+            <div class="box">
+        <form id="filterevents" action="filterevents.php" method="post">
+        <div id="datepicker"></div>
+                        <div class="grid-6-12">
+                    <label class="form-lbl">State</label>
+                    <select class="form-small">
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>Arizona</option>
+                        <option>Arkansas</option>
+                        <option>California</option>
+                        <option>Colorado</option>
+                        <option>Connecticut</option>
+                        <option>Delaware</option>
+                        <option>Florida</option>
+                        <option>Georgia</option>
+                        <option>Hawaii</option>
+                        <option>Idaho</option>
+                        <option>Illinois</option>
+                        <option>Indiana</option>
+                        <option>Iowa</option>
+                        <option>Kansas</option>
+                        <option>Kentucky</option>
+                        <option>Louisiana</option>
+                        <option>Maine</option>
+                        <option>Maryland</option>
+                        <option>Massachusetts</option>
+                        <option>Michigan</option>
+                        <option>Minnesota</option>
+                        <option>Missouri</option>
+                    </select>
+                <label class="form-lbl">City</label>
+                <select class="form-small">
+                </select>
+                </div>
+        </form>
+        </div>
+        <div style="margin:10px 0;">
+<iframe src="http://www.facebook.com/plugins/activity.php?site=mashable.com&amp;width=300&amp;height=300&amp;header=true&amp;colorscheme=dark&amp;font=tahoma&amp;border_color=blue&amp;recommendations=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:300px;" allowTransparency="true"></iframe>
+        </div>
+        <div class="box articles">
+
+			<div class="box">
+                <h2>
+                    <a href="#" id="toggle-login-forms">Login Forms</a>
+                </h2>
+                <div class="block" id="login-forms">
+				<form>
+					<fieldset class="login">
+						<legend>Login</legend>
+						<p class="notice">Login to complete your purchase.</p>
+						<p>
+							<label>Username: </label>
+							<!-- form: {{ User_Login }}-->
+                            <input type="text" name="username" />
+						</p>
+						<p>
+							<label>Password: </label>
+							<!-- form: {{ User_Password }}-->
+							<input type="password" name="password" />
+						</p>
+						<input class="login button" type="submit" value="Login" />
+					</fieldset>
+				</form>
+				<form action="">
+					<fieldset>
+						<legend>Register</legend>
+						<p>If you do not already have an account, please create a new account to register.</p>
+						<input type="submit" value="Create Account" />
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>                        
+</div>
+<div class="clear"></div>
+<hr/>
+<div class="clear"></div>
+<div class="grid_12" id="footer">
+	<div class="box">
+		<p>We are the music makers. We are the creators of dreams.</p>
+	</div>
+</div>
+<div class="clear"></div>
+
+</body>
+</html>
