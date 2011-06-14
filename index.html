@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Brad Davis Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link  href="http://fonts.googleapis.com/css?family=Playfair+Display:regular" rel="stylesheet" type="text/css" >
 </head>
 <body>
   <h1>Brad Davis Portfolio</h1>
@@ -11,8 +13,8 @@
         <h3>Nightrise.com</h3>
         <p>Short term contract to design UI for a social network.</p>
         <ul>
-        <li><a href='nr/dash_nightclub.html'>Nightclub Dashboard</a></li>
-        <li><a href='nr/create_user.html'>Create New User Page</a></li>
+        <li id='link'><h4><a href='nr/dash_nightclub.html'><span id='icon1'></span>Nightclub Dashboard</a></h4></li>
+        <li><h4><a href='nr/create_user.html'><span id='icon2'></span>Create New User Page</a></h4></li>
         </ul>
       </li>
       <li>
@@ -22,10 +24,28 @@
           for small businesses in the area.
         </p>
         <ul>
-        <li><a href='elliereynoldsart.com'>Ellie Reynolds Art</a></li>
+        <li><h4><a href='elliereynoldsart.com'><span id='icon3'></span>Ellie Reynolds Art</a></h4></li>
         </ul>
       </li>
     </ul>
   </div>
+  <div id='footer'>
+    <hr/> 
+    <p>
+      For more check out <a href='github.com/thecolorblue'>my github account</a>
+      or <a href='forrst.me/bdavis'>my forrst account</a>.
+    </p>
+  </div>
+  <script src='raphael-min.js'></script>
+  <script src='jquery-1.6.1.min.js'></script>
+  <script>
+   var iconOne = Raphael(document.getElementById('icon1'), 32, 32);
+   var iconTwo = Raphael(document.getElementById('icon2'), 32, 32);
+   var iconThree = Raphael(document.getElementById('icon3'), 32, 32);
+   var link = iconOne.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
+   var link = iconTwo.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
+   var link = iconThree.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
+
+  </script>
 </body>
 </html>
