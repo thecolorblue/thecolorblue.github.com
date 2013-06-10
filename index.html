@@ -1,86 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Brad Davis Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link  href="http://fonts.googleapis.com/css?family=Playfair+Display:regular" rel="stylesheet" type="text/css" >
-</head>
-<body>
-  <h1>Brad Davis Portfolio</h1>
-  <div>
-    <ul>
-      <li>
-        <h3>Launch House News Page</h3>
-        <p>A small project for <a href="http://launchhouse.com">LaunchHouse</a>, a business incubator in Beautiful Cleveland, Ohio.</p>
-        <ul>
-        <li id='link'><h4><a href='http://thecolorblue.github.com/Launch-House-News'><span id='icon6'></span>News Page</a></h4></li>
-        </ul>
-      </li>
-      <li>
-        <h3>NightClub Network</h3>
-        <p>Short term contract to design UI for a social network.</p>
-        <ul>
-        <li id='link'><h4><a href='nr/dash_nightclub.html'><span id='icon1'></span>Nightclub Dashboard</a></h4></li>
-        <li><h4><a href='nr/create_user.html'><span id='icon2'></span>Create New User Page</a></h4></li>
-        <li><h4><a href='clean_splash/index.htm'><span id='icon3'></span>Splash Page</a></h4></li>
-        </ul>
-      </li>
-      <li>
-        <h3>Writabl.com</h3>
-        <p>
-          A collection of wordpress blogs that I have developed 
-          for small businesses in the area.
-        </p>
-        <ul>
-        <li><h4><a href='http://elliereynoldsart.com'><span id='icon4'></span>Ellie Reynolds Art</a></h4></li>
-        </ul>
-      </li>
-      <li>
-        <h3>Couchdb + Google Maps Mashup</h3>
-        <p>
-          A quick test to see what could be done combining couchdb and Google Maps. 
-        </p>
-        <ul>
-        <li><h4><a href='http://writabl-test.iriscouch.com/akronhistoric/_design/sofa/_list/index/recent-posts?descending=true&limit=25'><span id='icon5'></span>Google Maps Mashup</a></h4></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div id='footer'>
-    <hr/> 
-    <p>
-      For more check out <a href='http://github.com/thecolorblue'>my github account</a>
-      or <a href='http://forrst.me/bdavis'>my forrst account</a>.
-    </p>
-  </div>
-  <script src='raphael-min.js'></script>
-  <script src='jquery-1.6.1.min.js'></script>
-  <script>
-   var iconOne = Raphael(document.getElementById('icon1'), 32, 32);
-   var iconTwo = Raphael(document.getElementById('icon2'), 32, 32);
-   var iconThree = Raphael(document.getElementById('icon3'), 32, 32);
-   var iconFour = Raphael(document.getElementById('icon4'), 32, 32);
-   var iconFive = Raphael(document.getElementById('icon5'), 32, 32);
-   var iconSix = Raphael(document.getElementById('icon6'), 32, 32);
-   var link = iconOne.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
-   var link = iconTwo.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
-   var link = iconThree.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
-   var link = iconFour.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
-   var link = iconFive.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});
-   var link = iconSix.path("M16,1.466C7.973,1.466,1.466,7.973,1.466,16c0,8.027,6.507,14.534,14.534,14.534c8.027,0,14.534-6.507,14.534-14.534C30.534,7.973,24.027,1.466,16,1.466zM13.665,25.725l-3.536-3.539l6.187-6.187l-6.187-6.187l3.536-3.536l9.724,9.723L13.665,25.725z").attr({fill: "#000", stroke: "none"});  
-   </script>
-   <script type="text/javascript">
+---
+layout: default
+title: Your New Jekyll Site
+---
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-15578963-11']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</body>
-</html>
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Fourager"
+date:   2013-06-10 11:46:49
+categories: webapp
+---
+
+Fourager
+
+[fourager.com]: http://fourager.com
+
+Fourager is a web application for sharing what you are eating with your friends on facebook, tumblr, and twitter. The site uses oauth to authorize posting on social networks. It tries to focus on the quick input of details about your food, focusing on what your are eating, what is in the food and who you are with. 
+
+I used:
+
+ - jQuery
+ - Backbone.js
+ - Underscore.js
+ - Bootstrap

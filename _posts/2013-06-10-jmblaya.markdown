@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Jmblaya"
+date:   2013-06-10 11:46:49
+categories: webapp
+---
+
+Jmblaya
+[jmblaya.com]: http://jmblaya.com
+
+We used:
+
+ - Angular.js
+ - Expres.js
+ - Murray CMS
+ - Thrift

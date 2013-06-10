@@ -1,1 +1,0 @@
-<iframe src="http://www.facebook.com/plugins/activity.php?site=engadget.com&amp;width=230&amp;height=300&amp;header=true&amp;colorscheme=dark&amp;font=lucida+grande&amp;recommendations=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:230px; height:300px;" allowTransparency="true"></iframe>
