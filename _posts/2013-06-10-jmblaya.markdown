@@ -6,8 +6,7 @@ categories: webapp
 short: "Site for chefs to promote themselves. Think github for cooks."
 ---
 
-Jmblaya
-[jmblaya.com]: http://jmblaya.com
+[jmblaya.com](http://jmblaya.com)
 
 We used:
 
