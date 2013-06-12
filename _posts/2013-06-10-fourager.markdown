@@ -12,7 +12,13 @@ Fourager
 
 Fourager is a web application for sharing what you are eating with your friends on facebook, tumblr, and twitter. The site uses oauth to authorize posting on social networks. It tries to focus on the quick input of details about your food, focusing on what your are eating, what is in the food and who you are with. 
 
-<br/>
+
+<ul class="slides">
+	<li>
+		<img alt="home page" src="/css/images/fourager-1.png">
+	</li>
+</ul>
+<hr class="clear">
 
 I used:
 
