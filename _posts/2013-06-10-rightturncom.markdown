@@ -3,6 +3,7 @@ layout: post
 title:  "RightTurn"
 date:   2013-06-10 11:46:49
 categories: dealertire html/css/js
+short: "RightTurn.com is a website for consumers to order tires and schedule an appointment to have them installed at a local dealer. "
 ---
 
 Right Turn

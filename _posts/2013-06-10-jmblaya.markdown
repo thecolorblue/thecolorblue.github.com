@@ -3,6 +3,7 @@ layout: post
 title:  "Jmblaya"
 date:   2013-06-10 11:46:49
 categories: webapp
+short: "Site for chefs to promote themselves. Think github for cooks."
 ---
 
 Jmblaya

@@ -1,13 +1,18 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: "Brad Davis: Portfolio"
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+<div id="home" class="col-12">
+<div class="panel">
+  <div class="panel-heading">My Work</div>
+  <small>These are a list of my recent projects.</small>
+  <div class="posts list-group list-group-flush">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <a href="{{ post.url }}" class="list-group-item">
+          <h4 class="list-group-item-heading">{{ post.title }}</h4>
+          <p class="list-group-item-text">{{ post.short }}</p>
+        </a>
     {% endfor %}
-  </ul>
+  </div>
 </div>

@@ -3,6 +3,7 @@ layout: post
 title:  "js_school"
 date:   2013-06-10 11:46:49
 categories: journal
+short: "My Javascript Journal."
 ---
 
 JS School
