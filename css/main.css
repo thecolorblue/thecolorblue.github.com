@@ -1,3 +1,4 @@
+/* jmblaya colors */
 /*****************************************************************************/
 /*
 /* Common
@@ -4511,15 +4512,6 @@ h1 {
 p {
   margin: 1em 0;
 }
-a {
-  color: #00a;
-}
-a:hover {
-  color: #000;
-}
-a:visited {
-  color: #a0a;
-}
 table {
   font-size: inherit;
   font: 100%;
@@ -4589,9 +4581,6 @@ ul.posts span {
   float: left;
   margin-right: 3em;
 }
-.site .footer .contact a {
-  color: #8085C1;
-}
 .site .footer .rss {
   margin-top: 1.1em;
   margin-right: -0.2em;
@@ -4648,6 +4637,24 @@ ul.slides li {
 ul.slides li img {
   width: 100%;
 }
+/* list items */
+.list-group-item {
+  transition: all 300ms ease-in-out;
+}
+a.list-group-item:hover,
+a.list-group-item:focus {
+  background-color: #e0ece2;
+}
+.list-group-item-text {
+  transition: all 200ms ease-in-out;
+}
+a.list-group-item .list-group-item-text {
+  color: #a97052;
+  font-weight: 100;
+}
+.list-group-item:hover .list-group-item-text {
+  color: #291206;
+}
 /* imgs */
 img.img-circle {
   border: 23px solid white;
@@ -4657,7 +4664,26 @@ img.img-circle:hover {
   border: 5px solid white;
 }
 /* btns */
+a {
+  color: #e0ece2;
+}
+a:hover {
+  color: white;
+}
+a:visited {
+  color: #e0ece2;
+}
+.btn {
+  background-image: url("/css/transparent_noise.png");
+  background-color: #f3bbb7;
+  border-radius: 2px;
+  padding: 4px 13px 4.5px;
+  margin: 3px 0px;
+  transition: 100ms all ease-in-out;
+  box-shadow: 1px 1px 2px #eb918c;
+  border: 1px solid #e98983;
+  border-top: 1px solid #f3bbb7;
+}
 .btn:hover {
-  /*color: #ddd;*/
-
+  -webkit-transform: scale(1.1);
 }
