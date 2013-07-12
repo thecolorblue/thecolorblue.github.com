@@ -6,7 +6,9 @@ categories: journal
 short: "My Javascript Journal."
 ---
 
-[github.com/thecolorblue/js_school](http://github.com/thecolorblue/js_school)
+<a href="http://github.com/thecolorblue/js_school" class="btn">
+	github.com/thecolorblue/js_school
+</a>
 
 JS School is influenced by twitter's Scala School website. It is a collection of how tos and general lessons on javascript. I have written this by myself to collect things I have learned about the language and what has worked out well for me. I eventually want to turn it into a full guide to moving from a beginner to a javascript professional.
 

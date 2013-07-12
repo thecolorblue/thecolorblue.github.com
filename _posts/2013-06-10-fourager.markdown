@@ -6,7 +6,7 @@ categories: webapp
 short: "Fourager is a web application for sharing what you are eating with your friends on facebook, tumblr, and twitter."
 ---
 
-[fourager.com](http://fourager.com)
+<a href="http://fourager.com" class="btn">fourager.com</a>
 
 Fourager is a web application for sharing what you are eating with your friends on facebook, tumblr, and twitter. The site uses oauth to authorize posting on social networks. It tries to focus on the quick input of details about your food, focusing on what your are eating, what is in the food and who you are with. 
 

@@ -6,7 +6,7 @@ categories: dealertire html/css/js
 short: "RightTurn.com is a website for consumers to order tires and schedule an appointment to have them installed at a local dealer. "
 ---
 
-[rightturn.com](http://rightturn.com)
+<a href="http://rightturn.com" class="btn">rightturn.com</a>
 
 RightTurn.com is a website for consumers to order tires and schedule an appointment to have them installed at a local dealer. This was a mid-development team. My work was taking psd design documents and developing the html/css/javascript. 
 

@@ -6,7 +6,7 @@ categories: webapp
 short: "Site for chefs to promote themselves. Think github for cooks."
 ---
 
-[jmblaya.com](http://jmblaya.com)
+<a href="http://jmblaya.com" class="btn">jmblaya.com</a>
 
 We used:
 
