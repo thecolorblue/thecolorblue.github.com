@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Boston Pizza Online Ordering"
-date:   2015-11-14 11:46:49
+date:   2014-10-01 11:46:49
 categories: webapp
 short: "Responsive pizza ordering website"
 ---
@@ -10,7 +10,7 @@ short: "Responsive pizza ordering website"
 	BP Ordering
 </a>
 
-Boston Pizza is a pizza chain in Canada. Their online ordering site lets customers pick their location, browse their large menu, relevant to the time of the day and day of the week, pick ordering time and location, and pay online. 
+Boston Pizza is a pizza chain in Canada. Their online ordering site lets customers pick their location, browse their large menu, relevant to the time of the day and day of the week, pick ordering time and location, and pay online.
 
 We used:
 
