@@ -6,9 +6,7 @@ categories: webapp
 short: "Micro-service hosting files from Beegit projects, indexed in Elastic Search"
 ---
 
-<a href="http://m.rightturn.com" class="btn">m.rightturn.com</a>
-
-RightTurn Mobile is the mobile web application for rightturn.com, written in html/css/javascript for IOS and android devices. This was a smaller team, consisting of one designer and three developers.
+Beegit Garden was developed to give a publicly viewable version of documents in Beegit. Each document in the project is indexed in Elastic Search, and rendered into HTML in node.js. The user can search through the project they are looking at.
 
 <ul class="slides">
 <li>
