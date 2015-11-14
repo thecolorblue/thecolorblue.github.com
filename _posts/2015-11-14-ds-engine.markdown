@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Differential Synchronization Engine"
+date:   2015-11-14 11:46:49
+categories: webapp
+short: ""
+---
+
+<a href="https://gist.github.com/thecolorblue/6e5cfb080bd1484c16d2" class="btn">
+	Diff Sync Server Code
+</a>
+
+Differential Synchonization Engine is built from the algorythm developed by Neil Fraser. Neil developed this algorithm at Google for managing changes in Google Docs, across multiple clients editing the same document. Beegit uses Diff-Sync for syncing documents on client browsers from the editor to anyone also viewing the document. 
+
+The link is to a gist of the core server code. The rest of the project has not yet been open sourced.
+
+We used:
+
+ - Plain Old Javascript
+ - <a href="https://neil.fraser.name/writing/sync/eng047-fraser.pdf">Neil Fraser Paper</a>
