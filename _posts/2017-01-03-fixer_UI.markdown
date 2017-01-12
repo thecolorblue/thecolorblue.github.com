@@ -10,6 +10,14 @@ short: "Quick UI for fixer.io. "
 
 A quick project I threw together to play with jsbin and make something simple with react.js.
 
+<ul class="slides">
+<li>
+<a href="/css/images/fixer_screenshot.png">
+<img alt="project page" src="/css/images/fixer_screenshot.png">
+</a>
+</li>
+</ul>
+
 I used:
 
  - jQuery
