@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Fixer UI"
+date:   2017-01-02 11:46:49
+categories: fun html/css/js
+short: "Quick UI for fixer.io. "
+---
+
+<a href="http://jsbin.com/pusiwifuhi/edit?html,output" class="btn">jsbin: Fixer UI</a>
+
+A quick project I threw together to play with jsbin and make something simple with react.js.
+
+I used:
+
+ - jQuery
+ - react.js
+ - Bootstrap
