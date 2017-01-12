@@ -12,8 +12,8 @@ A quick project I threw together to play with jsbin and make something simple wi
 
 <ul class="slides">
 <li>
-<a href="/css/images/fixer_screenshot.png">
-<img alt="project page" src="/css/images/fixer_screenshot.png">
+<a href="/css/images/fixer_screenshot.PNG">
+<img alt="project page" src="/css/images/fixer_screenshot.PNG">
 </a>
 </li>
 </ul>
