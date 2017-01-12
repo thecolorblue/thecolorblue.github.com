@@ -17,6 +17,7 @@ A quick project I threw together to play with jsbin and make something simple wi
 </a>
 </li>
 </ul>
+<hr class="clear">
 
 I used:
 
